@@ -1,0 +1,862 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>VeriTabani But</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="dc3a69a0-4795-427a-be66-b39c3272361e" class="page mono"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_william_morris_1878.jpg" style="object-position:center 0%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/banana_orange.svg"/></div><h1 class="page-title">VeriTabani But</h1></header><div class="page-body"><h1 id="9972a677-5ec4-4216-a743-ed627c82a9d4" class=""><details open=""><summary><mark class="highlight-brown">Functions</mark></summary></details></h1><div class="indented"><h2 id="28dbf4e4-9348-4905-9318-594516ae24e6" class=""><details open=""><summary>Questions</summary></details></h2><div class="indented"><blockquote id="6388e7e2-26b6-4ef8-a7f7-df2d536a6df9" class="">Desi hesabi en*boy*yükseklik/3000 formulü ile bulunmaktadir. Buna göre verilen en, boy, ve yükseklik bilgilerini kullanarak	desi hesabi yapip sonucunu dönen bir fonksiyon yaziniz.</blockquote><blockquote id="583f57d6-c87a-4f1c-860c-1a8a881e2d37" class="">Verilen bir oyuncu için toplam kazandigi oyun sayisini dönen bir fonksiyon yaziniz. Eger oyuncunun kazandigi hiç oyun yoksa sonuç NULL dönmemelidir.</blockquote><blockquote id="c1e81fa2-60a2-4df3-baba-8ec806c7e860" class="">Verilen boy (metre cinsinden) ve kilo (kg cinsinden) degerlerine göre Vücut Kitle Indikesi (Body Mass Index, BMI) degerini geri dönen bir fonksiyon yaziniz .	BMI degeri, KILO/ (BOY * BOY) seklinde hesaplanmaktadir.	Sonuç degeri noktadan sonra iki basamak olacak sekilde yuvarlanarak döndürülmelidir</blockquote><blockquote id="b1feef4b-a35c-48b2-b96c-1e2cc692f952" class="">Verilen yüzlük (100) not degerini dörtlük (4) not degerine çevirecek fonksiyonu yaziniz . Çevrim için formül:	DörtÜzerindenNot = -0.283 + 0.043 * YüzÜzerindenNot</blockquote></div><h2 id="60c111a0-6661-4291-8cc0-08933d9cabf5" class=""><details open=""><summary>Example 1.</summary></details></h2><div class="indented"><pre id="c2aff406-e32a-48e4-89c1-eae874e3f950" class="code code-wrap"><code>/*	Desi hesabi en*boy*yükseklik/3000 formulü ile bulunmaktadir. Buna göre verilen en, boy, ve yükseklik bilgilerini kullanarak	desi hesabi yapip sonucunu dönen bir fonksiyon yaziniz.*/
+
+CREATE FUNCTION fncDesi(@en FLOAT, @boy FLOAT, @yukseklik FLOAT) RETURNS FLOAT AS 
+BEGIN 
+	RETURN @en * @boy * @yukseklik / 3000
+END
+GO</code></pre></div><h2 id="941f4dd5-8f4c-4247-b90d-59e4f517b39f" class=""><details open=""><summary>Example 2.</summary></details></h2><div class="indented"><pre id="ea4d2f56-d214-46fb-83e3-3786920e53af" class="code code-wrap"><code>/*Verilen bir oyuncu için toplam kazandigi oyun sayisini dönen bir fonksiyon yaziniz. Eger oyuncunun kazandigi hiç oyun yoksa sonuç NULL dönmemelidir.*/
+CREATE FUNCTION fncKazandigiOyunSayisi(@OyuncuID INT) RETURNS INT AS 
+BEGIN 
+	RETURN (SELECT ISNULL(COUNT(*), 0)FROM tblOyun O WHERE O.Kazanan = @OyuncuID)
+-- Sonucun NULL cikmamasi için ISNULL fonksiyonu kullanildi
+
+END 
+GO</code></pre></div><h2 id="8004746b-d4bf-4819-8947-400e8745c7e9" class=""><details open=""><summary>Example 3.</summary></details></h2><div class="indented"><pre id="43b13af6-3bc7-4bb2-b4df-1cab9b3edb64" class="code code-wrap"><code>/*	Verilen boy (metre cinsinden) ve kilo (kg cinsinden) degerlerine göre Vücut Kitle Indikesi (Body Mass Index, BMI) degerini geri dönen bir fonksiyon yaziniz .	BMI degeri, KILO/ (BOY * BOY) seklinde hesaplanmaktadir.	Sonuç degeri noktadan sonra iki basamak olacak sekilde yuvarlanarak döndürülmelidir*/
+
+CREATE FUNCTION fncBMI(@boy FLOAT, @kilo FLOAT) RETURNS FLOAT AS 
+BEGIN
+	RETURN ROUND(@kilo / (@boy * @boy), 2)
+END
+GO</code></pre></div><h2 id="fd2fc37f-5a21-4c2a-bd0b-97011076919f" class=""><details open=""><summary>Example 4.</summary></details></h2><div class="indented"><pre id="bf48bfeb-3f33-43e4-94e7-c95ea2aaf032" class="code code-wrap"><code>/*Verilen yüzlük (100) not degerini dörtlük (4) not degerine çevirecek fonksiyonu yaziniz . Çevrim için formül:	DörtÜzerindenNot = -0.283 + 0.043 * YüzÜzerindenNot*/
+
+CREATE FUNCTION fncNotCevir(@yuzluk_not FLOAT)
+RETURNS FLOAT AS 
+BEGIN 
+	RETURN -0.283 + 0.0429 * @yuzluk_not
+END
+GO</code></pre><p id="ee5789a8-031c-4591-a2f6-3546faca9501" class="">
+</p></div></div><h1 id="971c3f11-d53d-40d8-9a41-6420dd4d5d60" class=""><details open=""><summary><mark class="highlight-orange">Views</mark></summary></details></h1><div class="indented"><h2 id="f98bd9dd-c8c4-4d25-8530-e3f00fb5cc8f" class=""><details open=""><summary>Questions</summary></details></h2><div class="indented"><blockquote id="1a16ea01-8f7f-46b2-89bd-e6df6e1e5347" class="">Her bir tedarikçinin (supplier) ismini ve kendisinden kaç farkli  ürün alindigini gösteren bir view yaziniz .	Ornegin Tokyo Traders firmasindan Mishi Kobe Niku, Ikura, ve Longlife Tofu ürünleri aliniyorsa bu view calistirildiginda Tokyo Traders için 3 yazacaktir.</blockquote><blockquote id="7b1a4a9c-816e-436e-91aa-f04f7399af75" class="">
+TÜM oyuncular için asagidaki sekilde cikti verebilecek bir VIEW yaziniz 
+Ad Soyad | KaçKezOyunOynadi | KaçKezKazandi | MaxKazandigiPara | Seviye
+</blockquote><blockquote id="ff1fbae4-fddf-4fe0-8dcb-7cb9bb0e44b3" class="">	Sistemde kayitli kullanicilarin bilgilerini asagidaki sekilde getiren bir view yaziniz.		
+																	Ad Soyad | Yas | Hedef Agirlik | Baslangic Agirlik | Son Ölçüm | Mevcut Agirlik | Verilen Kilo | Durum | BMI	
+•	Son Ölçüm: En son kilo ölçüm tarihinden o ana kadar geçen gün sayisi gösterilecektir.	
+•	Verilen Kilo: Mevcut agirlik ile baslangic agirligin farkidir.	
+•	Durum: Eger mevcut agirlik hedef agirliktan küçük ya da esit ise “Hedefe ulasildi”, aksi halde aralarindaki fark yazilmalidir.	
+•	BMI: Ilk sorudaki fonksiyon cagrilacaktir. (sistemde boy bilgisinin cm olarak kayitli olduguna dikkat ediniz)</blockquote><blockquote id="d457421e-e628-4798-aef4-ebcc733bcb06" class="">Ogrenci bilgilerini asagidaki gibi getirecek bir View yaziniz . Harf notu hesaplamasi soyledir; 
+AA için 90 veya üstü, 
+BB için 80 veya üstü, 
+CC için 70 veya üstü,
+DD için 60 veya üstü, 
+FF için 59 ve alti.
+(Dörtlük ortalama için ilk sorudaki fonksiyonu kullaniniz)	
+Ogrenci Numarasi| Ad Soyad | Dönem Durumu (yaziyla) | Yüzlük Ortalama | Harf Notu | Dörtlük Ortalama | Kayit Durumu (yaziyla) |</blockquote></div><h2 id="14070018-044a-4e6b-972c-d08bb6a4068c" class=""><details open=""><summary>Example 1.</summary></details></h2><div class="indented"><p id="386c56d1-b572-489a-83bb-35b8960ba77a" class="">
+</p><p id="b331c3d1-5c2d-4d1f-ae8b-fffed9fe9d19" class="">
+</p><pre id="a215744f-b756-4439-a32a-87a4c1fefab8" class="code code-wrap"><code>/*	Her bir tedarikçinin (supplier) ismini ve kendisinden kaç farkli  ürün alindigini gösteren bir view yaziniz .	Ornegin Tokyo Traders firmasindan Mishi Kobe Niku, Ikura, ve Longlife Tofu ürünleri aliniyorsa bu view calistirildiginda Tokyo Traders için 3 yazacaktir.*/
+CREATE VIEW vwSupplierProductAmount AS 
+			SELECT	S.CompanyName,
+							COUNT(P.ProductID)
+			FROM Products P
+			INNER JOIN Suppliers S ON S.SupplierID = P.SupplierID
+			GROUP BY S.CompanyName
+GO</code></pre><p id="4ca81c84-8bc1-42b9-9dd9-b57cae89a65f" class="">
+</p></div><h2 id="1472e7a7-d8af-40d2-8ced-33aa7a3b1c12" class=""><details open=""><summary>Example 2.</summary></details></h2><div class="indented"><p id="a1387b02-be4c-4f93-95c7-e7ce333e55ba" class="">
+</p><pre id="6458a36d-c003-4b2c-8ca2-1247e48d9385" class="code code-wrap"><code>/*
+TÜM oyuncular için asagidaki sekilde cikti verebilecek bir VIEW yaziniz 
+Ad Soyad | KaçKezOyunOynadi | KaçKezKazandi | MaxKazandigiPara | Seviye
+*/
+CREATE VIEW vwOyuncuSkorlari AS 
+SELECT	O.Ad + &#x27; &#x27; + O.Soyad AS Oyuncu,
+			ISNULL(COUNT(Oyn.ID), 0) AS OyunSayisi,
+			dbo.fncKazandigiOyunSayisi(O.ID) AS KazanmaSayisi,
+			ISNULL(MAX(Para), 0) AS EnCokPara,
+			O.Seviye AS Seviye
+FROM tblOyuncu O
+LEFT JOIN tblOynayanlar Oyn ON O.ID = Oyn.OyuncuID
+-- TÜM oyuncular istendigi için INNER JOIN degil LEFT JOIN
+GROUP BY O.ID, O.Ad + &#x27; &#x27; + O.Soyad, O.Seviye
+GO</code></pre><p id="52c0e6f8-bc39-4643-b12a-95a3567cc144" class="">
+</p></div><h2 id="b16d7e2f-d388-41b3-9665-dd047d78b24f" class=""><details open=""><summary>Example 3.</summary></details></h2><div class="indented"><pre id="84bb5eb5-a7ae-4ddf-b68d-276e2bb6ee36" class="code code-wrap"><code>/*	Sistemde kayitli kullanicilarin bilgilerini asagidaki sekilde getiren bir view yaziniz.		
+																	Ad Soyad | Yas | Hedef Agirlik | Baslangic Agirlik | Son Ölçüm | Mevcut Agirlik | Verilen Kilo | Durum | BMI	
+•	Son Ölçüm: En son kilo ölçüm tarihinden o ana kadar geçen gün sayisi gösterilecektir.	
+•	Verilen Kilo: Mevcut agirlik ile baslangic agirligin farkidir.	
+•	Durum: Eger mevcut agirlik hedef agirliktan küçük ya da esit ise “Hedefe ulasildi”, aksi halde aralarindaki fark yazilmalidir.	
+•	BMI: Ilk sorudaki fonksiyon cagrilacaktir. (sistemde boy bilgisinin cm olarak kayitli olduguna dikkat ediniz)*/
+CREATE VIEW vwKullanicilar AS 
+SELECT	Ad + &#x27; &#x27; + Soyad AS AdSoyad,
+				YAS,
+				HedefAgirlik ,
+				BaslangicAgirlik,
+				DATEDIFF(dd, SonOlcumTarihi, GETDATE()) AS SonOlcum,
+				MevcutAgirlik,
+				BaslangicAgirlik - MevcutAgirlik AS SimdiyeKadarVerilenKilo,
+CASE 
+	WHEN MevcutAgirlik &lt;= HedefAgirlik 
+	THEN &#x27;HEDEFE ULASILDI&#x27;
+	ELSE &#x27;GERIYE KALAN : &#x27; + CONVERT(VARCHAR(5), MevcutAgirlik - HedefAgirlik) + &#x27; KG&#x27; 
+END AS Durum,
+--Ilk kosil dogruysa ekrana &#x27;HEDEFE ULASILDI&#x27; metni yazdirildigi için burada convert yapilmasi lazim çünkü bir sütunda iki farkli tipte veri gösterilemez			
+dbo.fncBMI(Boy / 100, MevcutAgirlik) AS BMI
+--Boy cm olarak tutulduðu için 100&#x27;e bölerek fonksiyona göndermemiz gerekiyor
+FROM tblKullanici
+GO</code></pre><p id="1278778e-01c1-459c-b4fb-e23eb9cdef79" class="">
+</p></div><h2 id="af8106a9-3815-462d-a416-098facae5ba6" class=""><details open=""><summary>Example 4.</summary></details></h2><div class="indented"><pre id="412da5ad-8910-4aa9-8566-995514409e7e" class="code code-wrap"><code>/*Ogrenci bilgilerini asagidaki gibi getirecek bir View yaziniz . Harf notu hesaplamasi soyledir; 
+AA için 90 veya üstü, 
+BB için 80 veya üstü, 
+CC için 70 veya üstü,
+DD için 60 veya üstü, 
+FF için 59 ve alti.
+(Dörtlük ortalama için ilk sorudaki fonksiyonu kullaniniz)	
+									Ogrenci Numarasi| Ad Soyad | Dönem Durumu (yaziyla) | Yüzlük Ortalama | Harf Notu | Dörtlük Ortalama | Kayit Durumu (yaziyla) |*/
+CREATE VIEW vwOgrBilgi AS 
+	SELECT	
+	O.ogrno AS OgrNo,
+	O.ad + &#x27; &#x27; + O.soyad AS AdSoyad,
+	CASE
+		WHEN donem &gt; 8  
+		THEN &#x27;DÖNEM UZATMIS&#x27; 
+		ELSE &#x27;NORMAL&#x27; 
+	END AS DonemDurumu,
+	GNO AS YuzlukOrt,
+	CASE
+			WHEN GNO &gt;= 90 THEN &#x27;AA&#x27;
+			WHEN GNO &gt;= 80 THEN &#x27;BB&#x27;
+			WHEN GNO &gt;= 70 THEN &#x27;CC&#x27;
+			WHEN GNO &gt;= 60 THEN &#x27;DD&#x27;
+			ELSE &#x27;FF&#x27;
+	END AS HarfNotu,
+	dbo.fncNotCevir(GNO) AS DortlukOrt,
+	CASE
+			WHEN aktif = 0 THEN &#x27;MEZUN OLMUS&#x27;
+			WHEN aktif = 1 THEN &#x27;DEVAM EDIYOR&#x27;
+			WHEN aktif = 2 THEN &#x27;DONDURMUS&#x27;
+	END AS KayitDurumu
+
+	FROM tblOgrenci O
+
+GO
+-- SELECT * FROM vwOgrBilgi</code></pre><p id="618a54fd-1c39-4acc-a467-afef66f036b8" class="">
+</p></div></div><h1 id="f313cd6a-d91a-4581-9522-ca79169d166c" class=""><details open=""><summary><mark class="highlight-purple">Procedures</mark></summary></details></h1><div class="indented"><p id="d5c9cf98-0bf0-4b5d-97d6-7df0c787ae82" class="">
+</p><h2 id="a979334f-c854-4b5e-923e-7d07e87b9399" class=""><details open=""><summary>Example 1.1</summary></details></h2><div class="indented"><pre id="b3fa9390-530a-4836-a3f6-33fce8be1de6" class="code code-wrap"><code>/*	Sistemde her bir satis elemanin sorumlu oldugu bölgeler EmployeeTerritories tablosunda tanimlanmistir. Bir bölgeden yalnizca bir eleman sorumlu olmali ve bir elemanin en çok sorumlu oldugu bölge sayisi da 10 olmalidir.	Buna göre istenen bir satis elemani için bölge atamasi yapabilen bir SP yaziniz. Ayrica bahsedilen gerekli kontrolleri de	bir trigger ile gerceklestiriniz*/
+CREATE PROCEDURE spAddEmpTerritory(@EmployeeID int, @TerritoryID nvarchar(20)) AS 
+	INSERT INTO EmployeeTerritories VALUES(@EmployeeID , @TerritoryID)
+GO 
+CREATE TRIGGER trgCheckEmpTerritory ON EmployeeTerritories AFTER INSERT AS 
+	DECLARE @empid INT, @terid nvarchar(20), @c INT 
+	SELECT @empid = EmployeeID, @terid = TerritoryID FROM inserted
+	SELECT @c = COUNT(TerritoryID) FROM EmployeeTerritories WHERE EmployeeID = @empid
+	IF (@c - 1) = 10
+		BEGIN 
+				ROLLBACK 
+				RAISERROR(&#x27;THIS EMPLOYEE ALREADY HAS 10 TERRITORIES...&#x27;, 16, 1)
+		END 
+	IF EXISTS (SELECT *FROM EmployeeTerritories WHERE TerritoryID = @terid)
+		BEGIN 
+				ROLLBACK
+				RAISERROR(&#x27;THIS(%s) TERRITORIY BELONGS ANOTHER EMPLOYEE...&#x27;, 16, 1, @terid)
+		END
+GO</code></pre></div><h2 id="3a7e453e-cf1f-4931-9792-7d93c5a46b55" class=""><details open=""><summary>Example 1.2</summary></details></h2><div class="indented"><p id="c9316b75-553f-4901-b38c-5ed55ba60100" class="">
+</p><pre id="554c245d-8b37-42da-b102-6d54f693854b" class="code code-wrap"><code>/*	Sipariþ ayrýntýlarý (Order Details) tablosuna istenen bir sipariþe ait bir ürün için satýr ekleyebilecek bir SP yazýnýz.	Ekleme yapýlýrken þu kýsýtlarý göz önünde bulundurun		* Eðer stok yetersiz ise ekleme yapýlamaz ve uyarý verilir		* Ekleme yapýlabiliyorsa, ürüne ait stok miktarýnýn da düþürülmesi gerekir		* Bir trigger vasýtasýyla stok miktarý, yeniden sipariþ seviyesine (ReorderLevel) düþen ürün için		  “mal alým sipariþi verin” þeklinde bir mesaj da gösterilmelidir*/
+
+CREATE PROCEDURE spAddOrderDetails(@OrderID INT, @ProductID INT, @UnitPrice MONEY, @Quantity SMALLINT, @Discount REAL)AS 
+			DECLARE @UnitsInStock SMALLINT = (SELECT UnitsInStock FROM Products WHERE ProductID = @ProductID)
+			IF @UnitsInStock &gt;= @Quantity
+					BEGIN 
+						INSERT INTO [Order Details] VALUES(@OrderID, @ProductID, @UnitPrice, @Quantity, @Discount)
+						UPDATE ProductsSET UnitsInStock -= @Quantity WHERE ProductID = @ProductID
+					END 
+			ELSE 
+					RAISERROR(&#x27;INSUFFICENT STOCK...&#x27;, 16, 1)
+GO
+
+CREATE TRIGGER trgCheckProductStock ON Products AFTER UPDATE AS 
+		DECLARE @ReorderLevel SMALLINT, @UnitsInStock SMALLINT 
+		SELECT @ReorderLevel = ReorderLevel, @UnitsInStock = UnitsInStock FROM inserted
+		IF @UnitsInStock &lt;= @ReorderLevel
+			RAISERROR(&#x27;LOW STOCK LEVEL... PLACE A PURCHASE ORDER...&#x27;, 10, 1)
+
+GO</code></pre><p id="4c982de9-3548-433f-9957-de05909a6084" class="">
+</p></div><h2 id="637469ef-f446-460b-945a-a8886877566c" class=""><details open=""><summary>Example 2.1</summary></details></h2><div class="indented"><p id="379ee904-1a87-461e-8613-04d9ae5bb7ec" class="">
+</p><blockquote id="11812ab2-7613-4183-a6df-9eb38f6af016" class="">Bir oyunda bir oyuncunun elindeki bir kartý aktifleþtiren SP&#x27;ý yazýnýz. Kýsýtlar þöyledir:			</blockquote><blockquote id="0f099ff6-d9d0-45a3-872c-0ff275b7fbef" class="">* Bir kartýn aktifleþtirilebilmesi için oyuncunun yeterli kaynaða sahip olmasý gerekir
+* Sadece pasif kartlar aktifleþtirilebilir	<p id="637c447d-998f-4b6b-856b-89dc66b3d902" class="">* Prosedür, iþlem baþarýlý ise 0 deðilse -1 dönmelidir		</p><p id="1fe9c0c3-e7df-4391-8eb6-d4218737ca66" class="">* Güncelleme esnasýnda sorun oluþursa yapýlan iþlemler geri alýnmalý ve iþlem baþarýsýzlýðý bildirilmelidir</p></blockquote><p id="b9cec794-14ff-4235-882d-2f98f61bd3b0" class="">
+</p><figure id="44bca7a6-e3e7-447e-96ba-310a04c22081" class="image"><a href="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_25.png"><img style="width:1529px" src="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_25.png"/></a></figure><p id="5e05e1e6-323b-4aa8-96d1-9996d191dac0" class="">
+</p><p id="a116634e-d84f-4736-8d91-e39decf64b90" class="">
+</p></div><h2 id="d8349cb6-388a-4857-aa60-64446a9c8b07" class=""><details open=""><summary>Example 2.2</summary></details></h2><div class="indented"><p id="59340031-7a12-4eb2-91b4-810718f4169a" class="">
+</p><blockquote id="58760ab0-aa66-487f-b02f-14eb9d5ff65d" class=""><em>Verilen bir oyun ve oyuncu için aktif kartlarýndan gelir elde etmesini saðlayacak SP&#x27;ý yazýnýz</em></blockquote><figure id="8b2a7ea5-e4eb-4430-b28a-807072c9088b" class="image"><a href="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_26.png"><img style="width:1838px" src="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_26.png"/></a></figure><p id="c9efc51e-f370-4f80-8305-bba4bc06f1d0" class="">
+</p><blockquote id="c1e6ac76-dbc0-4ba4-aab6-3ff54644b410" class="">	
+AÞAÐIDAKÝ SORULAR SÝZE BIRAKILMIÞTIR	* Bir oyun baþlangýcýnda oyunculara rastgele 3 kart daðýtacak bir SP yazýnýz. Oyunda kart tablosundaki tüm kartlarýn kullanýldýðý varsayýlabilir. Bir kart bir oyunda	  sadece bir oyuncuda olabilir.	* Oyun esnasýnda oyuncunun kart destesinden eline yeni bir kart alabileceði bir SP yazýnýz.	* Yeni bir kart alan oyuncu için elindeki pasif kart sayýsýný kontrol edecek bir Trigger yazýnýz. Bir oyuncunun bir oyunda elinde pasif en çok 5 kart olabilir	* Her bir tur sonunda çalýþtýrýlacak bir SP yazýnýz. Bu prosedür, spGelirEldeEt prosedürünü oyundaki tüm oyuncular için yürütecektir. Ayrýca oyunda 20. tur&#x27;a gelinmiþse	  oyunu bitirecektir. Bu durumda oyunu kazananý en çok paraya sahip olan oyuncudur. Ancak oyuncu seviye atlayamaz.
+</blockquote></div><h2 id="5e811464-12e8-404a-b14d-551f03d67c37" class=""><details open=""><summary>Example 3.1</summary></details></h2><div class="indented"><p id="ad903412-f3f5-496a-87ea-18bc29d4e73d" class="">
+</p><blockquote id="57b1b162-8632-40d6-898b-e8d1c0018862" class="">Bir kullanýcýnýn herhangi bir tarihteki kilo ölçüm deðerini kaydedebilecek prosedürü yazýnýz. Kýsýtlar þöyledir:		•	Prosedüre tarih belirtilmediði takdirde geçerli sistem tarihi kullanýlacaktýr.		•	Ayný tarih için birden fazla giriþ yapýlabilmektedir. Ancak sistemde son girilen kilo bilgisi tutulmaktadýr. Diðer bir deyiþle eðer belirtilen tarih için kayýt yoksa yeni kayýt oluþturulacak ama varsa o kayýttaki kilo bilgisi güncellenecektir.		•	Girilen kilo deðeri kullanýcýnýn hedef kilo deðerinden küçük ya da eþit ise “Tebrikler hedefinize ulaþtýnýz” mesajý, deðilse “Üzgünüm hedefinize henüz ulaþamadýnýz” mesajý görüntülenecektir.</blockquote><p id="e45326e3-595b-49e9-bd60-781a6ec26316" class="">
+</p><figure id="398f34e5-b972-447a-ba25-5c81fdc93915" class="image"><a href="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_27.png"><img style="width:1850px" src="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_27.png"/></a></figure><p id="e089280c-62c4-461e-9c25-fa8fcbf8fdb1" class="">
+</p><blockquote id="05d25868-c228-4106-9a40-e1ad8a3be217" class="">Herhangi bir ölçüm deðeri girildiðinde, güncellendiðinde ya da silindiðinde çalýþacak olan triggerý yazýnýz (ayrý ayrý üç tane deðil hepsi için tek bir tane yazýlmalýdýr).	Söz konusu trigger, kullanýcý tablosundaki IlkOlcumTarihi, BaslangicAgirlik, SonOlcumTarihi, ve MevcutAgirlik alanlarýný ilgili kullanýcýnýn tüm ölçüm deðerlerini dikkate alarak güncellemelidir.	Ölçüm tablosu üzerinde toplu güncelleme ve silme iþlemlerinin yapýlmadýðýný varsayýnýz. (yani inserted ve deleted her zaman tek bir kullanýcýya ait satýrý dönecektir)</blockquote><p id="510c46b2-36d9-4903-8dcf-27ee164042c7" class="">
+</p></div><h2 id="86932adc-560f-47b5-b0a0-53d3bcb14185" class=""><details open=""><summary>Example 4.1</summary></details></h2><div class="indented"><p id="4ee63ee1-de15-4944-b705-b2fbf39f702e" class="">
+</p><blockquote id="94f03b7e-fac8-4f73-8b3d-d42576e55eef" class="">Öðrenci numarasý ve ders kodunu parametre olarak alýp ilgili ders kaydýný yapan Stored Procedure (SP) yazýnýz. Gereksinimler þöyledir:	•	Bir derse kayýt yapabilmek için o dersin kontenjanýnýn aþýlmamýþ olmasý gerekir. Eðer dersin kontenjaný dolmuþ ise, ders kaydý yapýlmamalý ve durumla ilgili bir hata mesajý gösterilmelidir	•	Bir öðrencinin bir ders için tek bir kaydý olmalýdýr. Eðer öðrenci ayný derse ikinci kez kayýt yapmak istiyorsa, ders kaydý yapýlmamalý ve durumla ilgili bir hata mesajý gösterilmelidir	•	Prosedür, phantom read eþ zamanlýlýk (concurrency) sorununu yaþatmayacak bir izolasyon seviyesini kullanmalýdýr	•	Ders kaydýný müteakip o dersin kayýtlý öðrenci sayýsý bir (1) arttýrýlmalýdýr</blockquote><figure id="fde25a80-198d-4645-857b-122f6b10e6e1" class="image"><a href="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_28.png"><img style="width:1685px" src="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_28.png"/></a></figure><p id="8a98b8d1-29ff-4875-92ae-a8f9a5f1a6c5" class="">
+</p><p id="609500e1-c1f2-41bd-9096-fbe2b12ef7b9" class="">
+</p></div></div><h1 id="1a628dcf-2a14-48de-b95b-0184b5d9a95d" class=""><details open=""><summary><mark class="highlight-teal">Triggers</mark> </summary></details></h1><div class="indented"><h2 id="6e1fd543-5ac5-4b52-b202-6e41ef034c82" class=""><details open=""><summary>Example 2.1</summary></details></h2><div class="indented"><blockquote id="0be835f6-77e4-42a5-a341-2cdf50deb526" class="">Bir oyunda her hangi bir oyuncunun aktif 5 kartý olduðu anda o oyunu biterecek bir Trigger yazýnýz. Kýsýtlar þöyledir:		* Oyunu kazanan oyuncunun adý ve soyadý bir mesajla gösterilecektir		* Oyuncunun elinde kalan para miktarý 10-50 arasý ise 1, 51-80 arasý ise 2, 81 ve üzeri ise 3 seviye puaný kendisine verilecektir.		* Oyunun kazanan bilgisi ile bitiþ tarih-saat bilgileri Trigger içerisinden ilgili tabloya yazýlacaktýr</blockquote><figure id="30a50049-9a99-497f-8d6a-87044403e782" class="image"><a href="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_29.png"><img style="width:1889px" src="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_29.png"/></a></figure><p id="1712f8e0-1d1e-410a-aa0d-1f9584c49962" class="">
+</p></div><h2 id="edef929f-a03d-4218-a2e7-8380770fbe77" class=""><details open=""><summary>Example 2.2</summary></details></h2><div class="indented"><p id="539fe6fb-7623-4a78-9451-6a0dafc1d1e9" class="">
+</p><blockquote id="9f387430-414b-456d-94c1-85691eeeccf6" class=""><em>Oyuncunun seviyesi arttýðý zaman onu tebrik edip kazandýðý seviye miktarýný gösterecek bir Trigger yazýnýz</em></blockquote><figure id="3247035f-45c3-44cb-9fe7-e6bf9cc8fe6c" class="image"><a href="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_30.png"><img style="width:1829px" src="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_30.png"/></a></figure><p id="efada5ad-9d82-4881-8c36-97af91234118" class="">
+</p></div><h2 id="d95ea3bc-ffe5-4ef2-b962-5e3c1275459f" class=""><details open=""><summary>Example 3.1</summary></details></h2><div class="indented"><blockquote id="43128347-9652-4928-a44f-ce12c83e423c" class="">Herhangi bir ölçüm deðeri girildiðinde çalýþacak olan bir baþka trigger daha yazýnýz.	Bu trigger’dan beklenen, eðer kullanýcý ücretsiz tipli bir kullanýcý ise ve toplamda yedi adet ölçüm deðeri ilgili tabloya girilmiþ ise sekizinci giriþin olmasýný engellemektir.	Böyle bir durumda “Ücretsiz kullanýcýlar en çok 7 tane ölçüm girebilirler” þeklinde bir mesaj da gösterilmelidir.</blockquote><figure id="5bd72a90-4fa6-49f1-a2f6-31ea69b4eeb9" class="image"><a href="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_31.png"><img style="width:1852px" src="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_31.png"/></a></figure><p id="5cd0e308-e03e-498e-9be4-290b40762eb5" class="">
+</p></div><h2 id="31b87a93-64e3-4666-b54d-442f698c5d09" class=""><details open=""><summary>Example 3.2</summary></details></h2><div class="indented"><blockquote id="04781739-b6bd-48c3-bc2a-dab6c6b37c58" class="">Herhangi bir ölçüm deðeri girildiðinde, güncellendiðinde ya da silindiðinde çalýþacak olan triggerý yazýnýz (ayrý ayrý üç tane deðil hepsi için tek bir tane yazýlmalýdýr).	Söz konusu trigger, kullanýcý tablosundaki IlkOlcumTarihi, BaslangicAgirlik, SonOlcumTarihi, ve MevcutAgirlik alanlarýný ilgili kullanýcýnýn tüm ölçüm deðerlerini dikkate alarak güncellemelidir.	Ölçüm tablosu üzerinde toplu güncelleme ve silme iþlemlerinin yapýlmadýðýný varsayýnýz. (yani inserted ve deleted her zaman tek bir kullanýcýya ait satýrý dönecektir)</blockquote><p id="289e6284-0961-43df-96da-6854a284c997" class="">
+</p><figure id="b0f289c9-575a-4eda-8aa2-41f34c2d0cc3" class="image"><a href="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_32.png"><img style="width:1894px" src="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_32.png"/></a></figure><p id="9d7ff4be-3b9c-497d-bd24-f7f1b69ddb18" class="">
+</p></div><h2 id="25ba035d-9822-46b6-9222-5189af0b99d9" class=""><details open=""><summary>Example 4.1</summary></details></h2><div class="indented"><p id="b41c9209-f5a2-4d27-948b-06b50cc82c10" class="">
+</p><blockquote id="58a3da99-dc8c-4250-9142-cbf5a4e7c344" class="">Üstteki soru için bir Trigger yazýnýz. Gereksinimler þöyledir:	•	Ortalamasý 2’nin altýnda olan öðrenciler en çok 5 derse kayýt yaptýrabilirler	•	Hiçbir öðrenci 8’den fazla derse kaydolamaz</blockquote><figure id="eebe6449-7daf-484e-acfb-a5ce4dd219c0" class="image"><a href="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_33.png"><img style="width:1758px" src="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_33.png"/></a></figure><p id="781550dc-f4e0-4485-a6a7-4f300711b2af" class="">
+</p></div><h2 id="f3881f1f-1a5f-4f9f-bad6-0617e1ed4902" class=""><details open=""><summary>Example 4.2</summary></details></h2><div class="indented"><blockquote id="badd5a36-adc1-4549-b397-434b38a46640" class="">tblDers tablosundaki kontenjan alaný güncellendiðinde çalýþacak bir Trigger yazýnýz. Eðer kontenjan deðeri kayýtlý öðrenci sayýsýndan az olacak þekilde bir güncelleme iþlemi yapýlýyorsa bu iþlem iptal edilmeli ve bu konuda kullanýcý bilgilendirilmelidir.Bir defada birden fazla dersin kontenjaný deðiþtirilmek istenmiþ olabileceðinden yukarýda belirtilen kýsýta uymayan bir güncelleme olduðunda tüm güncelleme iþleminin iptal edilmesi gerekir.*/</blockquote><figure id="cb17efd6-5298-49ee-92a6-2c1158441a4d" class="image"><a href="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_34.png"><img style="width:1905px" src="VeriTabani%20But%20dc3a69a04795427abe66b39c3272361e/Screenshot_34.png"/></a></figure><p id="bed4485e-2d6e-49da-9d5c-3f3a8a7be1eb" class="">
+</p></div></div></div></article></body></html>
